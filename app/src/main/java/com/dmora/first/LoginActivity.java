@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,6 +32,9 @@ public class LoginActivity extends AppCompatActivity {
 
         ImageView mDog = findViewById(R.id.dog);
         ImageView mLogo = findViewById(R.id.logo);
+
+        Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.zoomin_rotate);
+        mLogo.startAnimation(myAnim);
 
         Glide.with(this)
                 .load("https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
