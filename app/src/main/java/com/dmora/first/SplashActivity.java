@@ -21,11 +21,11 @@ public class SplashActivity extends AppCompatActivity {
 
         ImageView mLogo = findViewById(R.id.logo);
 
-        Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.zoomin_rotate);
+        Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.zoomin_fadein);
         mLogo.startAnimation(myAnim);
 
         Glide.with(this)
-                .load(R.drawable.avocado_del_diablo)
+                .load(R.drawable.logo_perro)
 //                .placeholder(new ColorDrawable(this.getResources().getColor(R.color.teal_200)))
 //                .circleCrop()
                 .into(mLogo);
