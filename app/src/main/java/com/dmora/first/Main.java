@@ -63,6 +63,9 @@ public class Main extends AppCompatActivity {
         if (id == R.id.log_out) {
             Main.super.onBackPressed();
         }
+        if (id == R.id.close) {
+            System.exit(0);
+        }
         return super.onOptionsItemSelected(item);
     }
 

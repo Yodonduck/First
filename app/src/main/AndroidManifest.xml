@@ -18,6 +18,7 @@
             android:name=".Main"
             android:exported="true"
             android:theme="@style/Theme.Fundamentals"
+            android:parentActivityName=".LoginActivity"
             android:screenOrientation="fullSensor">
             <meta-data
                 android:name="android.app.lib_name"
