@@ -72,7 +72,7 @@ public class Main extends AppCompatActivity {
             toast.show();
         }
         if (id == R.id.settings) {
-            return true;
+            openMainBAB();
         }
         if (id == R.id.log_out) {
             Main.super.onBackPressed();
@@ -84,6 +84,11 @@ public class Main extends AppCompatActivity {
             showAlertDialogButtonClicked(Main.this);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void openMainBAB() {
+        Intent intent = new Intent(this, MainBAB.class);
+        startActivity(intent);
     }
 
     private void showAlertDialogButtonClicked(Main main) {
