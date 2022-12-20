@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="new_sign_in">NUEVO? CREAR USUARIO</string>
+    <string name="cancel">CANCELAR</string>
+    <string name="login">ENTRAR</string>
+    <string name="password">Contraseña</string>
+    <string name="username">Usuario</string>
+    <string name="click_here">PULSA AQUÍ</string>
+    <string name="email">Correo</string>
+    <string name="repeat_password">Repetir contraseña</string>
+    <string name="sign_up">CREAR USUARIO</string>
+</resources>

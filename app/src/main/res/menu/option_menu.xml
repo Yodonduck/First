@@ -30,6 +30,12 @@
         android:title="Cerrar"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/alert"
+        android:orderInCategory="100"
+        android:title="Alerta"
+        app:showAsAction="never" />
+
 
 
 </menu>

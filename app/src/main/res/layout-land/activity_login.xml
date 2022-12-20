@@ -41,8 +41,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:hint="Username"
+            android:background="@color/white"
+            android:hint="@string/username"
             android:imeOptions="actionDone"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -60,8 +60,8 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:hint="Password"
+            android:background="@color/white"
+            android:hint="@string/password"
             android:inputType="textPassword">
 
         </EditText>
@@ -73,7 +73,8 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/buttonselector"
-        android:text="LOGIN"
+        android:text="@string/login"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintEnd_toStartOf="@id/cancel"
         app:layout_constraintTop_toBottomOf="@id/tilpassword" />
@@ -84,7 +85,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:backgroundTint="@color/buttonselector"
-        android:text="CANCEL"
+        android:text="@string/cancel"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@id/guideline2"
         app:layout_constraintStart_toEndOf="@id/login"
         app:layout_constraintTop_toTopOf="@id/login" />
@@ -97,7 +99,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="NEW? SIGN IN"
+        android:text="@string/new_sign_in"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toBottomOf="@+id/login" />

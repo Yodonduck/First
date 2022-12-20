@@ -1,29 +1,43 @@
 package com.dmora.first;
 
+import static android.view.View.INVISIBLE;
+import static android.view.View.VISIBLE;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
 public class Main extends AppCompatActivity {
 
     private SwipeRefreshLayout swipeLayout;
     WebView myContext;
+    ImageView avocado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        avocado = findViewById(R.id.avocado);
 
         swipeLayout = findViewById(R.id.myswipe);
         swipeLayout.setOnRefreshListener(mOnRefreshListener);
@@ -66,7 +80,64 @@ public class Main extends AppCompatActivity {
         if (id == R.id.close) {
             System.exit(0);
         }
+        if (id == R.id.alert) {
+            showAlertDialogButtonClicked(Main.this);
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showAlertDialogButtonClicked(Main main) {
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+
+        builder.setTitle("ALERTA");
+        builder.setMessage("No olvides el aguacate");
+        builder.setIcon(R.drawable.avocado_del_diablo);
+
+        builder.setPositiveButton("DAME AGUACATE", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // do something like...
+                animatedAvocado();
+                hideAvocado();
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton("No quiero aguacate", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast toast = Toast.makeText(Main.this,"Tú te lo pierdes",Toast.LENGTH_LONG );
+                toast.show();
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNeutralButton("Cerrar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void hideAvocado() {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                avocado.setVisibility(INVISIBLE);
+            }
+        }, 4000);
+    }
+
+    private void animatedAvocado() {
+        Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.zoomin_rotate);
+        avocado = findViewById(R.id.avocado);
+        avocado.setVisibility(VISIBLE);
+        avocado.startAnimation(myAnim);
     }
 
     protected SwipeRefreshLayout.OnRefreshListener mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {

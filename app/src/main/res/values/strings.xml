@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Fundamentals</string>
+    <string name="app_name" translatable="false">First</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="cancel">CANCEL</string>
+    <string name="new_sign_in">NEW? SIGN IN</string>
+    <string name="click_here">CLICK HERE</string>
+    <string name="email">Email</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="daniel_mora_moreno" translatable="false">Daniel Mora Moreno</string>
 </resources>
