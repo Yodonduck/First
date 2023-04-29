@@ -41,7 +41,7 @@
   * WebView linked to https://thispersondoesnotexist.com
   * Auto-refresh on swipe
   * Toolbar with options to give cookies or go back to the Login
-  * Menu on long-press
+  * Menu visible on long-press
   
   ![main](img/main.png)
   ![main2](img/main_menu.png)
